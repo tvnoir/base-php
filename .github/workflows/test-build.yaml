@@ -6,7 +6,7 @@ on:
       - 'feature/*'
 
 jobs:
-  Build_PHP_Ubuntu:
+  Build_PHP_Ubuntu_Test:
     strategy:
       matrix:
         version: ['5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0']
@@ -36,7 +36,7 @@ jobs:
           tags: ${{ secrets.IMAGE_NAME }}:${{ matrix.version }}-ubuntu
 
 
-  Build_PHP_CentOS7:
+  Build_PHP_CentOS7_Test:
     strategy:
       matrix:
         version: ['5.6', '7.0', '7.1']
@@ -70,7 +70,7 @@ jobs:
           build-args: PHP_VERSION=${{ env.REMI_PHP_VERSION }}
           tags: ${{ secrets.IMAGE_NAME }}:${{ matrix.version }}
 
-  Build_PHP_CentOS8:
+  Build_PHP_CentOS8_Test:
     strategy:
       matrix:
         version: ['7.2', '7.3', '7.4', '8.0']
