@@ -47,6 +47,11 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/trunk' }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -81,6 +86,11 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/trunk' }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
