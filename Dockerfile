@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN \
   apt-get update && \
   apt-get dist-upgrade -y && \
-  apt-get install gnupg -y && \
+  apt-get install gnupg curl -y && \
   apt-get clean
 
 RUN \
